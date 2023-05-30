@@ -1,0 +1,27 @@
+﻿@using Ebusinesstemplate.ViewModels.Account;
+
+@model LoginVM
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Login</h4>
+
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    <label asp-for="EmailOrusername">Name</label>
+                    <input asp-for="EmailOrusername" class="form-control" placeholder="EmailOrusername">
+                    <span class="text-danger" asp-validation-for="EmailOrusername">EmailOrusername</span>
+                </div>
+                
+                <div class="form-group">
+                    <label asp-for="Password">Password</label>
+                    <input asp-for="Password" type="password" class="form-control" placeholder="Password">
+                </div>
+               
+
+                <button type="submit" class="btn btn-primary me-2">Login</button>
+                <button class="btn btn-light">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>
