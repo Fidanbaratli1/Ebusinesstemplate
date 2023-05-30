@@ -1,0 +1,47 @@
+﻿@using Ebusinesstemplate.Models;
+@using Ebusinesstemplate.ViewModels.Employee;
+@model UpdateEmployeeVM
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Update Elements</h4>
+
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="Name">Name</label>
+                    <input asp-for="Name" class="form-control" placeholder="Name">
+                    <span class="text-danger" asp-validation-for="Name">Name</span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Surname">Surname</label>
+                    <input asp-for="Surname" class="form-control" placeholder="Surname">
+                    <span class="text-danger" asp-validation-for="Surname">Surname</span>
+                </div>
+                 <div class="form-group">
+                    <img src="~/assets/img/team/@Model.Image" />
+                   <input asp-for="Image" value="Image" style="display:none" class="form-control"/>
+                </div>
+
+                 <div class="form-group">
+                    <label asp-for="Photo">Photo</label>
+                    <input asp-for="Photo" class="form-control" placeholder="Photo">
+                    <span class="text-danger" asp-validation-for="Photo">Photo</span>
+                </div>
+                
+                
+                <div class="form-group">
+                    <select asp-for="PositionId">
+                        @foreach (Position position in ViewBag.Positions)
+                        {
+                            <option value="@position.Id">@position.Name</option>
+                        }
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary me-2">Update</button>
+                <button class="btn btn-light">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>
