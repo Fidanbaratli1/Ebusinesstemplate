@@ -12,5 +12,6 @@ namespace Ebusinesstemplate.DAL
         }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Position> Positions { get; set; }
+        public DbSet<Setting> Settings { get; set; }
     }
 }
